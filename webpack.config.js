@@ -6,13 +6,12 @@ const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
 const { env } = require('yargs').argv; // use --env with webpack 2
 const pkg = require('./package.json');
 
-
 const libraryName = 'icon-sdk-js';
 
 let outputFile;
 let mode;
 
-if (env === 'build') {
+if (env !== 'build') {
 	mode = 'production';
 	outputFile = `${libraryName}.min.js`;
 } else {
@@ -55,10 +54,10 @@ const config = {
 		extensions: ['.json', '.js'],
 	},
 	optimization: {
-		minimizer: [new UglifyJsPlugin({
-			cache: true,
-			parallel: true,
-		})],
+		// minimizer: [new UglifyJsPlugin({
+		// 	cache: true,
+		// 	parallel: true,
+		// })],
 	},
 };
 

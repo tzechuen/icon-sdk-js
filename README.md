@@ -182,5 +182,5 @@ const request = iconService.sendTransaction(signedTransaction);
 const txHash = request.execute(false)
 
 // Asynchronized request execution
-const txHash = await reqeust.execute(true)
+const txHash = await request.execute(true)
 ```
