@@ -11,7 +11,7 @@ const libraryName = 'icon-sdk-js';
 let outputFile;
 let mode;
 
-if (env !== 'build') {
+if (env === 'build') {
 	mode = 'production';
 	outputFile = `${libraryName}.min.js`;
 } else {
@@ -54,10 +54,10 @@ const config = {
 		extensions: ['.json', '.js'],
 	},
 	optimization: {
-		// minimizer: [new UglifyJsPlugin({
-		// 	cache: true,
-		// 	parallel: true,
-		// })],
+		minimizer: [new UglifyJsPlugin({
+			cache: true,
+			parallel: true,
+		})],
 	},
 };
 
