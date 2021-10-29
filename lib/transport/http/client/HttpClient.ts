@@ -49,8 +49,6 @@ export default class HttpClient {
             reject(error.toString());
           };
 
-          console.debug("[HttpClient] setting request headers...");
-
           req.setRequestHeader("Content-Type", "application/json");
           req.send(body);
         });
