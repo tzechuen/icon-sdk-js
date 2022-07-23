@@ -49,6 +49,7 @@ export default class HttpClient {
             reject(error.toString());
           };
 
+          req.setRequestHeader("Content-Type", "application/json");
           req.send(body);
         });
       },
